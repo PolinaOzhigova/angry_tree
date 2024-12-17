@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bux72aj3tylcb"]
+[gd_scene load_steps=5 format=3 uid="uid://bux72aj3tylcb"]
 
 [ext_resource type="Texture2D" uid="uid://dcslxfs13d6jv" path="res://assets/gameplay/background_1.png" id="1_kgmwj"]
-[ext_resource type="Texture2D" uid="uid://cb5wrk6fwpchf" path="res://assets/gameplay/New Piskel(1).png" id="2_3scya"]
+[ext_resource type="PackedScene" uid="uid://cvyaobdfor4na" path="res://scenes/snowflake.tscn" id="2_414va"]
+[ext_resource type="PackedScene" uid="uid://8uir2rn83mca" path="res://scenes/enemies/enemy.tscn" id="3_6p40u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn67w"]
 size = Vector2(79.75, 648)
@@ -33,16 +34,23 @@ position = Vector2(1224, 280)
 position = Vector2(-1264.25, 44)
 shape = SubResource("RectangleShape2D_gn67w")
 
-[node name="Bird" type="RigidBody2D" parent="."]
-position = Vector2(160, 552)
+[node name="Snowflakes" type="Node2D" parent="."]
+position = Vector2(144, 552)
 
-[node name="Texture" type="Sprite2D" parent="Bird"]
-texture_filter = 1
-position = Vector2(312, -40)
-scale = Vector2(0.140625, 0.140625)
-texture = ExtResource("2_3scya")
-hframes = 2
-vframes = 3
-frame = 3
+[node name="Snowflake" parent="Snowflakes" instance=ExtResource("2_414va")]
+position = Vector2(800, -272)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
+[node name="Snowflake2" parent="Snowflakes" instance=ExtResource("2_414va")]
+position = Vector2(800, -120)
+
+[node name="Snowflake3" parent="Snowflakes" instance=ExtResource("2_414va")]
+position = Vector2(-104, -24)
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2(888, 552)
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("3_6p40u")]
+position = Vector2(88, -32)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("3_6p40u")]
+position = Vector2(40, -32)

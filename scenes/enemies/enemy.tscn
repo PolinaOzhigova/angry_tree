@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://8uir2rn83mca"]
+
+[ext_resource type="PackedScene" uid="uid://x56q3ukt6cx1" path="res://scenes/damageable.tscn" id="1_yyk8v"]
+[ext_resource type="Texture2D" uid="uid://cb5wrk6fwpchf" path="res://assets/gameplay/New Piskel(1).png" id="2_h7t7j"]
+
+[node name="Enemy" instance=ExtResource("1_yyk8v")]
+
+[node name="Texture" parent="." index="0"]
+position = Vector2(-9.53674e-07, 0)
+scale = Vector2(0.132813, 0.120949)
+texture = ExtResource("2_h7t7j")
+hframes = 2
+vframes = 3
+frame = 4
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)

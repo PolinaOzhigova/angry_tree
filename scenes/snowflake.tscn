@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvyaobdfor4na"]
+
+[ext_resource type="PackedScene" uid="uid://x56q3ukt6cx1" path="res://scenes/damageable.tscn" id="1_76b72"]
+
+[node name="Snowflake" instance=ExtResource("1_76b72")]
