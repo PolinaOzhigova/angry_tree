@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bux72aj3tylcb"]
+
+[ext_resource type="Texture2D" uid="uid://dcslxfs13d6jv" path="res://assets/gameplay/background_1.png" id="1_kgmwj"]
+[ext_resource type="Texture2D" uid="uid://cb5wrk6fwpchf" path="res://assets/gameplay/New Piskel(1).png" id="2_3scya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gn67w"]
+size = Vector2(79.75, 648)
+
+[node name="Level" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_kgmwj")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(568, 600)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+polygon = PackedVector2Array(-568, -40, 584, -40, 584, 48, -568, 48)
+
+[node name="EastWall" type="StaticBody2D" parent="."]
+position = Vector2(1224, 280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EastWall"]
+position = Vector2(-32.125, 44)
+shape = SubResource("RectangleShape2D_gn67w")
+
+[node name="WastWall" type="StaticBody2D" parent="."]
+position = Vector2(1224, 280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WastWall"]
+position = Vector2(-1264.25, 44)
+shape = SubResource("RectangleShape2D_gn67w")
+
+[node name="Bird" type="RigidBody2D" parent="."]
+position = Vector2(160, 552)
+
+[node name="Texture" type="Sprite2D" parent="Bird"]
+texture_filter = 1
+position = Vector2(312, -40)
+scale = Vector2(0.140625, 0.140625)
+texture = ExtResource("2_3scya")
+hframes = 2
+vframes = 3
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
