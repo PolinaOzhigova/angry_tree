@@ -19,14 +19,14 @@ func _on_quit_mouse_entered() -> void:
 	$HoverButton.play()
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://Src/level.tscn")
+	get_tree().change_scene_to_file("res://Src/lvl/level.tscn")
 	$ClickButton.play()
 
 func _on_play_mouse_entered() -> void:
 	$HoverButton.play()
 
 func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file("res://Src/settings.tscn")
+	get_tree().change_scene_to_file("res://Src/settings/settings.tscn")
 	$ClickButton.play()
 	
 func _on_settings_mouse_entered() -> void:

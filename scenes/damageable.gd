@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Damageable
 
 @export_range(1, 1000)
 var health: int = 10
@@ -42,3 +43,6 @@ func get_damage(damage: float) -> void:
 		health -= damage
 		if health <= 0:
 			queue_free()
+			
+func attach_to(item=null):
+	pass

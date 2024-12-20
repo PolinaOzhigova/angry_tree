@@ -1,4 +1,4 @@
-extends "res://scenes/damageable.gd"
+extends Sprite2D
 
 enum{
 	STATE_IDLE,
