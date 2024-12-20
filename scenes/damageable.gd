@@ -26,17 +26,19 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		var v = contact_velocity - self_velocity
 
 		# Отладка
-		print("Contact velocity:", contact_velocity)
-		print("Self velocity:", self_velocity)
-		print("Relative velocity:", v)
+		#print("Contact velocity:", contact_velocity)
+		#print("Self velocity:", self_velocity)
+		#print("Relative velocity:", v)
 
 
 func _on_body_entered(body: Node) -> void:
-	# Передаем длину вектора скорости в качестве урона
+	# Передаем длину вектора скорости в качестве урона processed_velocity.length()*0.01
 	get_damage(processed_velocity.length()*0.01)
 
 func get_damage(damage: float) -> void:
-	print("Damage:", damage)
-	health -= damage
-	if health <= 0:
-		queue_free()
+	damage = round(damage)
+	if damage > 0:
+		print("Damage:", damage)
+		health -= damage
+		if health <= 0:
+			queue_free()
