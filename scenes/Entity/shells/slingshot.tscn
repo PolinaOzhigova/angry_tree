@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://vh6f7wmracd4"]
+
+[ext_resource type="Texture2D" uid="uid://cunn0ymgbitsi" path="res://assets/gameplay/slingshot_my_1.png" id="1_0d1te"]
+[ext_resource type="Script" path="res://scenes/Entity/shells/slingshot.gd" id="1_k2rd0"]
+[ext_resource type="Texture2D" uid="uid://cffhldcut8pwr" path="res://assets/gameplay/slingshot_my_2.png" id="2_prxqh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wlcvs"]
+radius = 41.0
+
+[node name="Slingshot" type="Node2D"]
+script = ExtResource("1_k2rd0")
+
+[node name="Slingshot_back" type="Sprite2D" parent="."]
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("1_0d1te")
+
+[node name="Slingshot_font" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_prxqh")
+
+[node name="LaunchPoint" type="Marker2D" parent="."]
+
+[node name="RightLine" type="Line2D" parent="."]
+points = PackedVector2Array(22, -13, -106, -14)
+default_color = Color(0.401434, 0.302084, 0.0853998, 1)
+
+[node name="LeftLine" type="Line2D" parent="."]
+points = PackedVector2Array(-18, -14, -106, -14)
+default_color = Color(0.4, 0.301961, 0.0862745, 1)
+
+[node name="TouchArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea"]
+position = Vector2(4, -2)
+shape = SubResource("CircleShape2D_wlcvs")
+
+[node name="CenterOfSlingShot" type="Marker2D" parent="."]
+
+[connection signal="input_event" from="TouchArea" to="." method="_on_touch_area_input_event"]

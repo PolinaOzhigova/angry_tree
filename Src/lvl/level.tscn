@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Src/lvl/level.gd" id="1_jngdw"]
 [ext_resource type="Texture2D" uid="uid://dcslxfs13d6jv" path="res://assets/gameplay/background_1.png" id="1_kgmwj"]
-[ext_resource type="PackedScene" uid="uid://cvyaobdfor4na" path="res://scenes/snowflake.tscn" id="2_414va"]
-[ext_resource type="PackedScene" uid="uid://8uir2rn83mca" path="res://scenes/enemies/enemy.tscn" id="3_6p40u"]
-[ext_resource type="PackedScene" uid="uid://vh6f7wmracd4" path="res://scenes/slingshot.tscn" id="4_xqbtd"]
+[ext_resource type="PackedScene" uid="uid://cvyaobdfor4na" path="res://scenes/Entity/shells/snowflake.tscn" id="2_414va"]
+[ext_resource type="PackedScene" uid="uid://8uir2rn83mca" path="res://scenes/Entity/enemies/enemy.tscn" id="3_6p40u"]
+[ext_resource type="PackedScene" uid="uid://vh6f7wmracd4" path="res://scenes/Entity/shells/slingshot.tscn" id="4_xqbtd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn67w"]
 size = Vector2(79.75, 648)
@@ -21,7 +21,7 @@ texture = ExtResource("1_kgmwj")
 position = Vector2(568, 600)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-polygon = PackedVector2Array(-568, -40, 584, -40, 584, 48, -568, 48)
+polygon = PackedVector2Array(-568, -40, -292.82, -40, 584, -40, 584, 48, -568, 48)
 
 [node name="EastWall" type="StaticBody2D" parent="."]
 position = Vector2(1224, 280)
@@ -41,13 +41,13 @@ shape = SubResource("RectangleShape2D_gn67w")
 position = Vector2(144, 552)
 
 [node name="Snowflake" parent="Snowflakes" instance=ExtResource("2_414va")]
-position = Vector2(-8, 0)
+position = Vector2(52, -6)
 
 [node name="Snowflake2" parent="Snowflakes" instance=ExtResource("2_414va")]
-position = Vector2(-104, -8)
+position = Vector2(-47, 0)
 
 [node name="Snowflake3" parent="Snowflakes" instance=ExtResource("2_414va")]
-position = Vector2(-56, 0)
+position = Vector2(6, -3)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(888, 552)
