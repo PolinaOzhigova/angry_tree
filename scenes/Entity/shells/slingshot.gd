@@ -18,6 +18,8 @@ var SlingShotState
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SlingShotState = SlingState.idle
+	left_line.points[1] = center_of_sling_shot
+	right_line.points[1] = center_of_sling_shot
 	
 
 
@@ -43,7 +45,6 @@ func _process(delta: float) -> void:
 				projectile.ThrowProjectile()
 				projectile.apply_impulse(velocity/50*distance)
 				SlingShotState = SlingState.projectileThrown
-				print(velocity/50*distance)
 				left_line.points[1] = center_of_sling_shot
 				right_line.points[1] = center_of_sling_shot
 				GameManager.CurrentGameState = GameManager.GameState.Play
