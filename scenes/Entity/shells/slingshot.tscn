@@ -37,5 +37,6 @@ position = Vector2(4, -2)
 shape = SubResource("CircleShape2D_wlcvs")
 
 [node name="CenterOfSlingShot" type="Marker2D" parent="."]
+position = Vector2(15, -19)
 
 [connection signal="input_event" from="TouchArea" to="." method="_on_touch_area_input_event"]

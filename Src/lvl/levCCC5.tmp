@@ -53,4 +53,4 @@ position = Vector2(88, -32)
 position = Vector2(40, -32)
 
 [node name="Slingshot" parent="." instance=ExtResource("4_xqbtd")]
-position = Vector2(272, 451)
+position = Vector2(272, 520)

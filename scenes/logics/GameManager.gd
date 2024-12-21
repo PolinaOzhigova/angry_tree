@@ -1,0 +1,27 @@
+extends Node
+
+enum GameState {
+	Start,
+	Play,
+	Win,
+	Lose
+}
+
+var CurrentGameState = GameState.Start
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	match CurrentGameState:
+		GameState.Start:
+			pass
+		GameState.Play:
+			pass
+		GameState.Win:
+			print("You won!")
+		GameState.Lose:
+			print("You lose!")
